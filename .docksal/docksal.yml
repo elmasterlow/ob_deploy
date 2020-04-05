@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:                                                        
+  # http(s)://VIRTUAL_HOST                                       
+  web:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: apache
+    depends_on:
+      - cli
+    labels:
+      - io.docksal.virtual-host=dev.onblue.pl
+  db:
+    extends:                                                     
+      file: ${HOME}/.docksal/stacks/services.yml                 
+      service: mysql
+  cli:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: cli
+    environment:
+      - DB_NAME=default
+      - DB_USER=user
+      - DB_PASSWORD=user
+      - DB_HOST=db
+      - TABLE_PREFIX=onblue_
+      - ENV=dev

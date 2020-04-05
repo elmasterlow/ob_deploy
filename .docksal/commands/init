@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Start containers
+fin up
+cp docroot/.htaccess.dev docroot/.htaccess

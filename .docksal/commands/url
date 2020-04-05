@@ -1,0 +1,3 @@
+fin wp option update home 'http://dev.onblue.pl' --path='docroot'
+fin wp option update siteurl 'http://dev.onblue.pl' --path='docroot'
+fin wp user update admin --user_pass="admin" --path='docroot'
